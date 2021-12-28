@@ -29,16 +29,15 @@ public class svPaquete extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+                  Controladora control = new Controladora();
         
-//          Controladora control = new Controladora();
-//        
-//        List<PaqueteTuristico> paquetes = control.traerPaquetes();
-//        
-//        HttpSession misession = request.getSession();
-//        
-//        misession.setAttribute("paquetes", paquetes);
-//        
-//        response.sendRedirect("listaPaquete.jsp");
+        List<PaqueteTuristico> paquetes = control.traerPaquetes();
+        
+        HttpSession misession = request.getSession();
+        
+        misession.setAttribute("listaPaquetes", paquetes);
+        
+        response.sendRedirect("Paquetes.jsp");
         
     }
 
@@ -60,7 +59,7 @@ public class svPaquete extends HttpServlet {
       
        request.getSession().setAttribute("paquetes", paquetes);
        
-        response.sendRedirect("crearPaquete.jsp");
+        response.sendRedirect("Paquetes.jsp");
         
     }
 

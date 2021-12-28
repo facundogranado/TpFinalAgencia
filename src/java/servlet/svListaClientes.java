@@ -32,7 +32,7 @@ public class svListaClientes extends HttpServlet {
         
         misession.setAttribute("listaClientes", clientes);
         
-        response.sendRedirect("listaCliente.jsp");
+        response.sendRedirect("Clientes.jsp");
         
         
     }

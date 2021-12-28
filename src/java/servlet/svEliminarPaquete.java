@@ -32,7 +32,7 @@ public class svEliminarPaquete extends HttpServlet {
         control.eliminarPaqueteId(id);
         
         request.getSession().setAttribute("listaPaquetes", control.traerPaquetes());
-        response.sendRedirect("listaPaquete.jsp");
+        response.sendRedirect("Paquetes.jsp");
         
     }
 

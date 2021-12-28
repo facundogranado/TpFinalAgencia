@@ -45,7 +45,7 @@ public class svVentaPaquetes extends HttpServlet {
         
         control.crearVenta(paquete, cliente, empleado,fecha,metodoPago);
         
-        response.sendRedirect("ventaPaquetes.jsp");
+        response.sendRedirect("VentaPaquete.jsp");
         
     }
 

@@ -33,7 +33,7 @@ public class svListaServicios extends HttpServlet {
         List<ServicioTuristico> listaServicios = control.traerServicios();
         HttpSession misession = request.getSession();
         misession.setAttribute("listaServicios",listaServicios);
-        response.sendRedirect("listaServicio.jsp");
+        response.sendRedirect("Servicios.jsp");
         
     }
 

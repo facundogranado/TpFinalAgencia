@@ -32,7 +32,7 @@ public class svEliminarCliente extends HttpServlet {
         control.eliminarClienteId(id);
         
         request.getSession().setAttribute("listaClientes", control.traerClientes());
-        response.sendRedirect("listaCliente.jsp");
+        response.sendRedirect("Clientes.jsp");
     }
     
 

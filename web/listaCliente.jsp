@@ -89,6 +89,7 @@
                 <tbody>
                     <% 
                     List<Cliente> clientes = (List) misession.getAttribute("listaClientes");
+                    
                     for (Cliente cliente : clientes) {
                     %> 
                                       

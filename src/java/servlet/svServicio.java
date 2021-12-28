@@ -50,7 +50,7 @@ public class svServicio extends HttpServlet {
             
             
         
-            response.sendRedirect("crearServicio.jsp");
+            response.sendRedirect("CrearServicio.jsp");
     }
 
     @Override

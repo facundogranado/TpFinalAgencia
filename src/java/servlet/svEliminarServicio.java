@@ -30,7 +30,7 @@ public class svEliminarServicio extends HttpServlet {
         control.eliminarServicioId(id);
         
         request.getSession().setAttribute("listaServicios", control.traerServicios());
-        response.sendRedirect("listaServicio.jsp");
+        response.sendRedirect("Servicios.jsp");
     }
 
     @Override

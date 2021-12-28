@@ -40,7 +40,7 @@ public class svEliminarEmpleado extends HttpServlet {
         
         
         request.getSession().setAttribute("listaEmpleados", control.traerEmpleados());
-        response.sendRedirect("listaEmpleado.jsp");
+        response.sendRedirect("Empleados.jsp");
                
     }
 

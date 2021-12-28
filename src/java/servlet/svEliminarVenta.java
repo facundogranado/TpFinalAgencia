@@ -39,7 +39,7 @@ public class svEliminarVenta extends HttpServlet {
         
         request.getSession().setAttribute("listaVentas", control.traerVentas());
         
-        response.sendRedirect("listaVentas.jsp");
+        response.sendRedirect("index.jsp");
         
     }
 

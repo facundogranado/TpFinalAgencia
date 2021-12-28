@@ -38,7 +38,7 @@ public class svModificarServicio extends HttpServlet {
             control.modificarServcio(servicio);
             
             request.getSession().setAttribute("listaServicios", control.traerServicios());
-            response.sendRedirect("listaServicio.jsp");
+            response.sendRedirect("Servicios.jsp");
         
     }
 
@@ -53,7 +53,7 @@ public class svModificarServicio extends HttpServlet {
         
         HttpSession misession = request.getSession();
         misession.setAttribute("servicio", servi);
-        response.sendRedirect("modificarServicio.jsp");
+        response.sendRedirect("ModificarServicio.jsp");
         
     }
 

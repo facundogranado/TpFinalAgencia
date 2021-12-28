@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -43,14 +38,21 @@ public class svModificarPaquete extends HttpServlet {
         }
         
         PaqueteTuristico paquete = control.buscarPaquete(idpaquete);
-        
+        double total=0,totalDescuento = 0;
+        for (ServicioTuristico servicio : servicios) {
+            total += servicio.getCosto_servicio();
+        }
+        totalDescuento = (10*total)/100;
+        total -= totalDescuento; 
+        paquete.setCosto_paquete(total);
         paquete.setServicios(servicios);
         
         control.modificarPaquete(paquete);
         
+        
         request.getSession().setAttribute("listaPaquetes", control.traerPaquetes());
         
-        response.sendRedirect("listaPaquete.jsp");
+        response.sendRedirect("Paquetes.jsp");
         
         
     }
@@ -70,7 +72,7 @@ public class svModificarPaquete extends HttpServlet {
         
         misession.setAttribute("paquete", paquete);
         
-        response.sendRedirect("modificarPaquete.jsp");
+        response.sendRedirect("ModificarPaquete.jsp");
         
     }
 

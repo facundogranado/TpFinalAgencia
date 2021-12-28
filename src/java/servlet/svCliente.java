@@ -54,7 +54,7 @@ public class svCliente extends HttpServlet {
         control.crearCliente(nombre,apellido,direccion,dni,nacionalidad,celular,email,fecha);
         
         
-        response.sendRedirect("crearCliente.jsp");
+        response.sendRedirect("CrearCliente.jsp");
     }
 
     @Override
