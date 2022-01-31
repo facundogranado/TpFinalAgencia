@@ -55,9 +55,8 @@ public class svPaquete extends HttpServlet {
         
        control.crearPaquete(servicios);              
        
-       List<PaqueteTuristico> paquetes = control.traerPaquetes();
       
-       request.getSession().setAttribute("paquetes", paquetes);
+       request.getSession().setAttribute("listaPaquetes", control.traerPaquetes());
        
         response.sendRedirect("Paquetes.jsp");
         

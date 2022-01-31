@@ -1,7 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -12,7 +12,10 @@
         <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
             <h3>Ingresar</h3>
             <form action="svUsuario" method="POST">
-                <div class="inputBox"> <input id="uname" type="text" name="usuario" placeholder="Usuario"> <input id="pass" type="password" name="contrasenia" placeholder="Contraseña"> </div> <input type="submit" name="" value="Login">
+                <div class="inputBox"> <input id="uname" type="text" name="usuario" placeholder="Usuario"> <input id="pass" type="password" name="contrasenia" placeholder="Contraseña"> </div> 
+
+                <input type="submit" name="" value="Login">
+            </form>
         </div>
-                </body>
-                </html>
+    </body>
+ </html>

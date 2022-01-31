@@ -26,7 +26,8 @@ public class ServicioTuristico implements Serializable {
     private double costo_servicio;
     @Temporal(TemporalType.DATE)
     private Date fecha_servicio;
-
+    
+    
     public ServicioTuristico() {
     }
 

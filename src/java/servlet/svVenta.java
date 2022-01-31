@@ -26,7 +26,7 @@ public class svVenta extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-         Controladora control = new Controladora();
+        Controladora control = new Controladora();
         List<Venta> listaVentas = control.traerVentas();
         HttpSession misession = request.getSession();
         misession.setAttribute("listaVentas",listaVentas);

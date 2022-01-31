@@ -31,7 +31,13 @@
     </head>
 
     <body id="page-top">
+                <%HttpSession misession = request.getSession();
+            String usu = (String) misession.getAttribute("usuario");
 
+            if (usu == null) {
+                response.sendRedirect("login.jsp");
+            } else {
+        %>
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -51,7 +57,7 @@
 
 
                 <li class="nav-item active">
-                    <form action="svVenta" method="GET"><a href="svVenta" class="SUBMIT nav-link" href=Ventas.jsp"> <i class="fas fa-fw fa-tachometer-alt"></i><span>Ventas</span></a></a></form>
+                    <form action="svVenta" method="GET"><a href="svVenta" class="SUBMIT nav-link" href=Ventas.jsp"> <i class=" fas fa-solid fa-cash-register"></i><span>Ventas</span></a></a></form>
 
                 </li>
 
@@ -59,13 +65,13 @@
                 <hr class="sidebar-divider">
 
                 <li class="nav-item active">
-                    <form action="svListaClientes" method="GET"><a href="svListaClientes" class="SUBMIT nav-link" href="Clientes.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Clientes</span></a></a></form>
+                    <form action="svCliente" method="GET"><a href="svCliente" class="SUBMIT nav-link" href="Clientes.jsp"><i class=" fas fa-solid fa-user"></i><span>Clientes</span></a></a></form>
                 </li>
 
                 <hr class="sidebar-divider">
 
                 <li class="nav-item active">
-                    <form action="svListaServicios" method="GET"><a href="svListaServicios" class="SUBMIT nav-link" href="Servicios.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Servicios</span></a></a></form>
+                    <form action="svServicio" method="GET"><a href="svServicio" class="SUBMIT nav-link" href="Servicios.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Servicios</span></a></a></form>
 
                 </li>
 
@@ -73,13 +79,13 @@
 
 
                 <li class="nav-item active">
-                    <form action="svPaquete" method="GET"><a href="svPaquete" class="SUBMIT nav-link" href="Paquetes.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Paquete</span></a></a></form>
+                    <form action="svPaquete" method="GET"><a href="svPaquete" class="SUBMIT nav-link" href="Paquetes.jsp"><i class="fas fa-solid fa-box"></i><span>Paquete</span></a></a></form>
 
                     <hr class="sidebar-divider">
 
 
                 <li class="nav-item active">
-                    <form action="svEmpleado" method="GET"><a href="svEmpleado" class="SUBMIT nav-link" href="Empleados.jsp"> <i class="fas fa-fw fa-tachometer-alt"></i><span>Empleados</span></a></a></form>
+                    <form action="svEmpleado" method="GET"><a href="svEmpleado" class="SUBMIT nav-link" href="Empleados.jsp"><i class=" fas fa-solid fa-user-tie"></i><span>Empleados</span></a></a></form>
 
                 </li>
                 <hr class="sidebar-divider">
@@ -110,14 +116,14 @@
                                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                     Paquetes Totales</div>
                                                     <%
-                                                        HttpSession misession = request.getSession();
+                                                        
                                                         List<PaqueteTuristico> paquetes = (List) misession.getAttribute("listaPaquetes");
                                                         int totalclientes = paquetes.size();
                                                     %>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><%=totalclientes%></div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                <i class="fas fa-boxes fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +150,7 @@
 
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                                    <i class="fas fa-box-open fa-2x text-gray-300"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -232,7 +238,7 @@
 
             </div>
 
-
+<%}%> 
     </body>
 
 </html>

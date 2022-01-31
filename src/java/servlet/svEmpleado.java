@@ -71,7 +71,7 @@ public class svEmpleado extends HttpServlet {
         
         control.crearEmpleado(nombre,apellido,direccion,dni,nacionalidad,celular,email,fecha,sueldo,cargo,nombreUsu,contrasenia);
         
-        response.sendRedirect("crearEmpleado.jsp");
+        response.sendRedirect("CrearEmpleado.jsp");
         
         
     }

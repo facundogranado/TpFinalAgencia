@@ -25,7 +25,13 @@
     </head>
 
     <body id="page-top">
+                <%HttpSession misession = request.getSession();
+            String usu = (String) misession.getAttribute("usuario");
 
+            if (usu == null) {
+                response.sendRedirect("login.jsp");
+            } else {
+        %>
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -53,14 +59,14 @@
                 <hr class="sidebar-divider">
 
                 <li class="nav-item active">
-                    <form action="svListaClientes" method="GET"><a href="svListaClientes" class="SUBMIT nav-link" href="Clientes.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Clientes</span></a></a></form>
+                    <form action="svCliente" method="GET"><a href="svCliente" class="SUBMIT nav-link" href="Clientes.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Clientes</span></a></a></form>
                 </li>
 
 
                 <hr class="sidebar-divider">
 
                 <li class="nav-item active">
-                    <form action="svListaServicios" method="GET"><a href="svListaServicios" class="SUBMIT nav-link" href="Servicios.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Servicios</span></a></a></form>
+                    <form action="svServicio" method="GET"><a href="svServicio" class="SUBMIT nav-link" href="Servicios.jsp"><i class="fas fa-fw fa-tachometer-alt"></i><span>Servicios</span></a></a></form>
 
                 </li>
 
@@ -88,7 +94,7 @@
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
                     <form class="formulario" action="svModificarServicio" method="GET" style="width: 100%">
-                    <%HttpSession misession = request.getSession();
+                    <%
                         ServicioTuristico servicio = (ServicioTuristico) misession.getAttribute("servicio");
                         {%>
                     <div class="mb-3">
@@ -127,7 +133,7 @@
    
             </div>
 
-
+<%}%> 
     </body>
 
 </html>
