@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,10 +28,18 @@ public class svEliminarCliente extends HttpServlet {
         
         int id = Integer.parseInt(request.getParameter("id"));
         Controladora control = new Controladora();
-        control.eliminarClienteId(id);
+
+
+        try{
+            control.eliminarClienteId(id);
+            request.getSession().setAttribute("listaClientes", control.traerClientes());
+            response.sendRedirect("Cliente.jsp");
+        }
         
-        request.getSession().setAttribute("listaClientes", control.traerClientes());
-        response.sendRedirect("listaCliente.jsp");
+        catch(Exception e){
+             response.sendRedirect("ClienteEliminar.jsp");
+        }
+        
     }
     
 

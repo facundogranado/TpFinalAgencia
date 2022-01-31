@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -55,7 +54,7 @@ public class svModificarEmpleado extends HttpServlet {
         
         request.getSession().setAttribute("listaEmpleados", control.traerEmpleados());
         
-        response.sendRedirect("listaEmpleado.jsp");
+        response.sendRedirect("Empleados.jsp");
         
     }
 
@@ -72,7 +71,7 @@ public class svModificarEmpleado extends HttpServlet {
         
         misession.setAttribute("empleado", empleado);
         
-        response.sendRedirect("modificarEmpleado.jsp");
+        response.sendRedirect("ModificarEmpleado.jsp");
         
     }
 

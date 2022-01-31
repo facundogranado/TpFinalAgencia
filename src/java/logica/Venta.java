@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,13 +25,13 @@ public class Venta implements Serializable {
     @Basic
     private String metodo_pago;
     
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     private Cliente clientes;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     private Empleado empleados;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     private PaqueteTuristico paquetesTuristicos;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     private ServicioTuristico serviciosTuristicos;
  
 

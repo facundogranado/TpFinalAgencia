@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package persistencia;
 
 import java.io.Serializable;
@@ -17,8 +18,8 @@ import logica.ServicioTuristico;
 import persistencia.exceptions.NonexistentEntityException;
 
 /**
- *
- * @author facundo
+ * 
+ * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class ServicioTuristicoJpaController implements Serializable {
 
@@ -27,10 +28,10 @@ public class ServicioTuristicoJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
     
-     public ServicioTuristicoJpaController(){
+      public ServicioTuristicoJpaController(){
         emf = Persistence.createEntityManagerFactory("TPFinalAgenciaPU");
     }
-
+    
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
@@ -138,5 +139,5 @@ public class ServicioTuristicoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

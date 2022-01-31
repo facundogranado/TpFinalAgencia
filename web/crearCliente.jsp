@@ -41,13 +41,13 @@
                             <a href="#"><i class=" far fa-grin"></i></a>Clientes
                             <ul>
                                 <li><a href="crearCliente.jsp">Crear Cliente</a> </li>
-                                <li><form action="svListaClientes" method="GET"><a href="svListaClientes" class="SUBMIT">Lista Clientes</a></form></li>
+                                <li><form action="svCliente" method="GET"><a href="svCliente" class="SUBMIT">Lista Clientes</a></form></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fab fa-bitbucket"></i> </a>Servicios
                             <ul>
                                 <li> <a href="crearServicio.jsp">Crear Servicio</a></li>
-                                <li> <form action="svListaServicios" method="GET"><a href="svListaServicios" class="SUBMIT">Lista Servicios</a></form></li>
+                                <li> <form action="svServicio" method="GET"><a href="svServicio" class="SUBMIT">Lista Servicios</a></form></li>
                             </ul></li>
                         <li><a href="#"><i class="fas fa-archive"></i></a>Paquetes
                             <ul>

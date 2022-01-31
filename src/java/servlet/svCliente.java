@@ -3,11 +3,14 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import logica.Cliente;
 import logica.Controladora;
 
 @WebServlet(name = "svCliente", urlPatterns = {"/svCliente"})
@@ -22,6 +25,16 @@ public class svCliente extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        Controladora control = new Controladora();
+        
+        List<Cliente> clientes = control.traerClientes();
+        
+        HttpSession misession = request.getSession();
+        
+        misession.setAttribute("listaClientes", clientes);
+        
+        response.sendRedirect("Clientes.jsp");
     }
 
     @Override
@@ -54,7 +67,7 @@ public class svCliente extends HttpServlet {
         control.crearCliente(nombre,apellido,direccion,dni,nacionalidad,celular,email,fecha);
         
         
-        response.sendRedirect("crearCliente.jsp");
+        response.sendRedirect("CrearCliente.jsp");
     }
 
     @Override

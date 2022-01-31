@@ -50,7 +50,7 @@ public class svModificarCliente extends HttpServlet {
         
         request.getSession().setAttribute("listaClientes", control.traerClientes());
         
-        response.sendRedirect("listaCliente.jsp");
+        response.sendRedirect("Clientes.jsp");
     }
 
     @Override
@@ -65,7 +65,7 @@ public class svModificarCliente extends HttpServlet {
         
         HttpSession misession = request.getSession();
         misession.setAttribute("cliente", cliente);
-        response.sendRedirect("modificarCliente.jsp");
+        response.sendRedirect("ModificarCliente.jsp");
     }
 
     @Override
